@@ -1,0 +1,147 @@
+.header {
+    border-bottom: 1px solid #E0DFDF;
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    min-width: 228px;
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header__logo {
+    min-width: 100%;
+    width: 100%;
+    color: #8B7969;
+    text-decoration: none;
+    font-family: "Inika", serif;
+    font-style: normal;
+    font-size: 30px;
+}
+
+/* ------------------------------------- */
+
+.contact-form__content {
+    margin: 0 auto;
+    max-width: 1230px;
+    color: #8B7969;
+}
+
+.contact-form__heading {
+    min-width: 100px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.contact-form__heading--h2 {
+    font-family: "Inika", serif;
+    font-size: 24px;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+
+/* ------------------------------------ */
+
+.form {
+    margin: 0 auto;
+    width: 70vw;
+    text-align: center;
+    font-family: "Inika", serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.confirm {
+    width: 100%;
+}
+
+.confirm__row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #E0DFDF;
+    border-bottom: none;
+}
+
+.confirm__row:last-of-type {
+    height: 84px;
+    border-bottom: 1px solid #E0DFDF;
+}
+
+.confirm__header {
+    display: flex;
+    min-width: 100px;
+    width: 35%;
+    background-color: #BAA899;
+}
+
+.confirm__header--span {
+    display: flex;
+    align-items: center;
+    padding-left: 20%;
+    font-size: 14px;
+    color: white;
+}
+
+.confirm__descript {
+    display: flex;
+    width: 65%;
+    min-width: 200px;
+}
+
+.confirm__descript--span {
+    display: flex;
+    width: 100%;
+    min-width: 100px;
+    padding: 10px 0;
+    padding-left: 20px;
+}
+
+#confirm__descript--textarea {
+    height: 80px;
+    font-family: "Inika", serif;
+    font-style: normal;
+    font-weight: 400;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+textarea::-webkit-resizer {
+    display: none;
+}
+
+/* -------------------------------------- */
+
+.form__button {
+    margin-top: 30px;
+}
+
+.form__button-submit {
+    padding: 10px;
+    width: 30%;
+    max-width: 140px;
+    min-width: 80px;
+    height: 40px;
+    font-size: 15px;
+    border: none;
+    background: #82756A;
+    color: #fff;
+    cursor: pointer;
+}
+
+.form__button-back {
+    padding: 10px;
+    width: 30%;
+    max-width: 140px;
+    min-width: 80px;
+    height: 40px;
+    font-size: 15px;
+    border: none;
+    color: #8B7969;
+    text-decoration-line: underline;
+    background-color: transparent;
+}
