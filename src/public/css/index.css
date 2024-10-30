@@ -1,28 +1,3 @@
-.header {
-    border-bottom: 1px solid #E0DFDF;
-  }
-  
-.header__inner {
-    display: flex;
-    align-items: center;
-    min-width: 228px;
-    margin: 0 auto;
-    padding: 20px 0;
-    text-align: center;
-  }
-  
-.header__logo {
-    min-width: 100%;
-    width: 100%;
-    color: #8B7969;
-    text-decoration: none;
-    font-family: "Inika", serif;
-    font-style: normal;
-    font-size: 30px;
-  }
-  
-/* ------------------------------------- */
-
 .contact-form__content {
     margin: 0 auto;
     max-width: 1230px;

@@ -46,7 +46,7 @@
           <div class="form__group-content" id="gender__content">
             <div class="form__gender3">
               <div class="form__gender">
-                <input class="form__gender--input" type="radio" name="gender" value="1" @checked(old('gender', $contact['gender'] ?? '') == 1) />男性
+                <input class="form__gender--input" type="radio" name="gender" value="1" checked />男性
               </div>
               <div class="form__error">
                 @error('gender')  
@@ -172,9 +172,9 @@
             <div class="form__category">
               <select class="form__category--select" name="category_id" value="{{ old('category_id', $contact['category_id'] ?? '') }}">
                 <option value="" disabled selected>選択してください</option>
-                <option value="option1" @selected(old('category_id', $contact['category_id'] ?? '') == 'option1')>オプション 1</option>
-                <option value="option2" @selected(old('category_id', $contact['category_id'] ?? '') == 'option2')>オプション 2</option>
-                <option value="option3" @selected(old('category_id', $contact['category_id'] ?? '') == 'option3')>オプション 3</option>
+                <option value="1">オプション 1</option>
+                <option value="2">オプション 2</option>
+                <option value="3">オプション 3</option>
               </select>
             </div>
             <div class="form__error">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Contact;
 
 class ContactController extends Controller
 {
@@ -41,6 +42,18 @@ class ContactController extends Controller
     {
       $contact = $request->only(['last_name', 'first_name', 'gender', 'email', 'tel', 'address', 'building', 'category_id', 'detail']);
       Contact::create($contact);
-      return view('thanks', compact('contact'));
+      return view('thanks');
     }
+
+    public function admin(Request $request)
+    {
+      // $contacts = Contact::Paginate(4);
+      // $received_contacts = Contact::with('category')->get();
+      return view('admin');
+      // return view('admin', ['contacts' => $contacts], 'received_contacts');
+    }
+
+    // $received_todos = Todo::with('category')->get();
+    // $received_categories = Category::all();
+    // return view('index', compact('received_todos', 'received_categories'));
 }
