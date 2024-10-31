@@ -4,12 +4,12 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
+use App\Models\Contact;
 
-class CategoriesTableSeeder extends Seeder
+class ContactsTableSeeder extends Seeder
 {
     public function run()
     {
-      Category::factory()->count(3)->create();
+        Contact::factory()->count(35)->create();
     }
 }

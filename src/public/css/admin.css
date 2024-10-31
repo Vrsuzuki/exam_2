@@ -44,7 +44,7 @@
 }
 
 .search__gender {
-  width: 8%;
+  width: 7%;
   height: 100%;
   margin: 0;
 }
@@ -72,12 +72,12 @@
 }
 
 .search__date {
-  width: 12%;
+  width: 14%;
   height: 100%;
   margin: 0;
 }
 
-.search__date--select {
+.search__date--calendar {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -86,7 +86,7 @@
 }
 
 .search__submit {
-  width: 8%;
+  width: 7%;
   height: 100%;
   margin: 0;
 }
@@ -158,7 +158,7 @@ svg.w-5.h-5 {
 .table__title-row--name {
   display: flex;
   flex-direction: row;
-  width: 22%;
+  width: 18%;
 }
 
 .table__title-row--gender {
@@ -170,13 +170,19 @@ svg.w-5.h-5 {
 .table__title-row--email {
   display: flex;
   flex-direction: row;
-  width: 33%;
+  width: 29%;
 }
 
 .table__title-row--category {
   display: flex;
   flex-direction: row;
-  width: 40%;
+  width: 34%;
+}
+
+.table__title-row--button {
+  display: flex;
+  flex-direction: row;
+  width: 10%;
 }
 
 .table__row {
@@ -188,7 +194,7 @@ svg.w-5.h-5 {
 }
 
 .table__row--name {
-  width: 22%;
+  width: 18%;
   height: 100;
 }
 
@@ -197,11 +203,15 @@ svg.w-5.h-5 {
 }
 
 .table__row--email {
-  width: 33%;
+  width: 29%;
 }
 
 .table__row--category {
-  width: 40%;
+  width: 34%;
+}
+
+.table__row--button {
+  width: 10%;
 }
 
 

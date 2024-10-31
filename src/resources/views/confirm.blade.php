@@ -74,7 +74,7 @@
                     <span class="confirm__header--span">お問い合わせの種類</span>
                 </th>
                 <td class="confirm__descript">
-                    <span class="confirm__descript--span">{{ $contact['category_id'] }}</span>
+                    <span class="confirm__descript--span">{{ $contact['category_id'] == 1 ? '商品のお届けについて' : ($contact['category_id'] == 2 ? '商品の交換について' : ($contact['category_id'] == 3 ? '商品トラブル' : ($contact['category_id'] == 4 ? 'ショップへのお問い合わせ' : ($contact['category_id'] == 5 ? 'その他' : '不明')))) }}</span>
                     <input type="hidden" name="category_id" value="{{ $contact['category_id'] }}" />
                 </td>
             </tr>

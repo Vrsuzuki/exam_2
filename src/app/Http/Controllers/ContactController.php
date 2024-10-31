@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
+use App\Models\Category;
 
 class ContactController extends Controller
 {
@@ -22,11 +24,12 @@ class ContactController extends Controller
         'category_id' => old('category_id', ''),
         'detail' => old('detail', ''),
     ]);
+    $received_categories = Category::all();
 
-      return view('index', compact('contact'));
+      return view('index', compact('contact', 'received_categories'));
     }
 
-    public function confirm(Request $request)
+    public function confirm(ContactRequest $request)
     {
       $contact = $request->only(['last_name', 'first_name', 'gender', 'email', 'tel-1', 'tel-2', 'tel-3', 'address', 'building', 'category_id', 'detail']);
       session(['contact' => $contact]);
@@ -47,13 +50,40 @@ class ContactController extends Controller
 
     public function admin(Request $request)
     {
-      // $contacts = Contact::Paginate(4);
-      // $received_contacts = Contact::with('category')->get();
-      return view('admin');
-      // return view('admin', ['contacts' => $contacts], 'received_contacts');
+      $received_contacts = Contact::Paginate(7);
+      $received_categories = Category::all();
+      
+      return view('admin', compact('received_contacts', 'received_categories'));
     }
 
-    // $received_todos = Todo::with('category')->get();
-    // $received_categories = Category::all();
-    // return view('index', compact('received_todos', 'received_categories'));
+    public function search(Request $request)
+    {
+      $query = Contact::with('category');
+      if ($request->filled('name_or_email')) {
+          $query->keywordSearch($request->name_or_email);
+      }
+      if ($request->filled('gender')) {
+          $query->genderSearch($request->gender);
+      }
+      if ($request->filled('category_id')) {
+          $query->categorySearch($request->category_id);
+      }
+      if ($request->filled('created_at')) {
+        $query->dateSearch($request->created_at);
+    }
+  
+      $received_contacts = $query->paginate(7)->appends($request->all());
+      
+      $received_categories = Category::all();
+      
+      return view('admin', compact('received_contacts', 'received_categories'));
+    }   
+    
+    public function reset(Request $request)
+    {
+      $received_contacts = Contact::Paginate(7);
+      $received_categories = Category::all();
+      
+      return redirect('/admin');
+    }
 }

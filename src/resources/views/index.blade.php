@@ -156,11 +156,6 @@
             <div class="form__building">
               <input class="form__building--input" type="text" name="building" autocomplete="address-line2" placeholder="例: 千駄ヶ谷マンション101" value="{{ old('building', $contact['building'] ?? '') }}" />
             </div>
-            <div class="form__error">
-              @error('building')  
-              {{ $message }}
-              @enderror
-            </div>
           </div>
         </div>
         <div class="form__group">
@@ -172,9 +167,9 @@
             <div class="form__category">
               <select class="form__category--select" name="category_id" value="{{ old('category_id', $contact['category_id'] ?? '') }}">
                 <option value="" disabled selected>選択してください</option>
-                <option value="1">オプション 1</option>
-                <option value="2">オプション 2</option>
-                <option value="3">オプション 3</option>
+                @foreach ($received_categories as $received_category)
+                <option value="{{ $received_category['id'] }}">{{ $received_category['content'] }}</option>
+                @endforeach
               </select>
             </div>
             <div class="form__error">
@@ -192,6 +187,11 @@
           <div class="form__group-content">
             <div class="form__detail">
               <textarea class="form__detail--input" name="detail" placeholder="お問い合わせ内容をご記入ください">{{ old('detail', $contact['detail'] ?? '') }}</textarea>
+            </div>
+            <div class="form__error">
+              @error('detail')  
+              {{ $message }}
+              @enderror
             </div>
           </div>
         </div>
