@@ -1,9 +1,36 @@
-@extends('layouts.app')
-@section('css')
-  <link rel="stylesheet" href="{{ asset('css/admin.css') }}" />
-@endsection
+<!DOCTYPE html>
+<html lang="ja">
 
-@section('content')
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Form</title>
+  <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
+  <link rel="stylesheet" href="{{ asset('css/common.css') }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('css/admin.css') }}" />
+  </head>
+
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a class="header__logo" href="/">
+        FashionablyLate
+      </a>
+    </div>
+    @if (Auth::check())
+    <div class="header__button">
+      <form action="/logout" method="post">
+      @csrf
+        <button class="header__button--change">Logout</button>
+      </form>
+    </div>
+    @endif
+  </header>
+  <main>
     <div class="admin">
       <div class="admin__heading">
         <h2 class="admin__heading--h2">Admin</h2>
@@ -85,5 +112,8 @@
         <p><strong>お問い合わせ内容:</strong> <span id="contactContent"></span></p>
       </div>
     </div>
-@endsection
+  </main>
+</body>
+
+</html>
 

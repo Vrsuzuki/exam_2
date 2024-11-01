@@ -20,23 +20,11 @@
       <a class="header__logo" href="/">
         FashionablyLate
       </a>
+      @yield('change')
     </div>
   </header>
 
-  <main>
-  <ul class="header-nav">
-    @if (Auth::check())
-    <li class="header-nav__item">
-      <a class="header-nav__link" href="/mypage">マイページ</a>
-    </li>
-    <li class="header-nav__item">
-      <form action="/logout" method="post">
-        @csrf
-        <button class="header-nav__button">ログアウト</button>
-      </form>
-    </li>
-    @endif
-  </ul>
+<main>
   @yield('content')
 </main>
 </body>

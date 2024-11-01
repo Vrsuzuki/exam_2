@@ -1,3 +1,14 @@
+.header__logo {
+    position: relative;
+    left: 0;
+    width: 100%;
+    color: #8B7969;
+    text-decoration: none;
+    font-family: "Inika", serif;
+    font-style: normal;
+    font-size: 30px;
+  }
+
 .contact-form__content {
     margin: 0 auto;
     max-width: 1230px;

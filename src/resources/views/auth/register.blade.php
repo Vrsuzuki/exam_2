@@ -3,6 +3,12 @@
   <link rel="stylesheet" href="{{ asset('css/register.css') }}" />
 @endsection
 
+@section('change')
+  <div class="header__button">
+    <a class="header__button--change" href="/login">login</a>
+  </div>
+@endsection
+
 @section('content')
     <div class="register">
       <div class="register__heading">

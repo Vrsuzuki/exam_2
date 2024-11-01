@@ -29,6 +29,7 @@ class ContactController extends Controller
       return view('index', compact('contact', 'received_categories'));
     }
 
+    
     public function confirm(ContactRequest $request)
     {
       $contact = $request->only(['last_name', 'first_name', 'gender', 'email', 'tel-1', 'tel-2', 'tel-3', 'address', 'building', 'category_id', 'detail']);
@@ -36,10 +37,12 @@ class ContactController extends Controller
       return view('confirm', compact('contact'));
     }
 
+
     public function backToForm(Request $request)
     {
       return redirect('/')->withInput();
     }
+
 
     public function thanks(Request $request)
     {
@@ -48,6 +51,7 @@ class ContactController extends Controller
       return view('thanks');
     }
 
+
     public function admin(Request $request)
     {
       $received_contacts = Contact::Paginate(7);
@@ -55,6 +59,7 @@ class ContactController extends Controller
       
       return view('admin', compact('received_contacts', 'received_categories'));
     }
+
 
     public function search(Request $request)
     {
@@ -78,6 +83,7 @@ class ContactController extends Controller
       
       return view('admin', compact('received_contacts', 'received_categories'));
     }   
+    
     
     public function reset(Request $request)
     {
