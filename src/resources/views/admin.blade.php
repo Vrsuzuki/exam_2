@@ -46,7 +46,7 @@
             <button class="contact__custom-button--export-button">エクスポート</button>
           </div>
           <div class="content__custom-button--pages">
-            {{ $received_contacts->links() }}
+            {{ $received_contacts->links('vendor.pagination.bootstrap-4') }}
           </div>
         </div>
         <div class="contact__list">
@@ -69,6 +69,20 @@
             @endforeach
           </table>
         </div>
+      </div>
+    </div>
+    <div class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>お問い合わせ詳細</h2>
+        <p><strong>名前:</strong> <span id="contactName"></span></p>
+        <p><strong>性別:</strong> <span id="contactGender"></span></p>
+        <p><strong>メールアドレス:</strong> <span id="contactEmail"></span></p>
+        <p><strong>電話番号:</strong> <span id="contactPhone"></span></p>
+        <p><strong>住所:</strong> <span id="contactAddress"></span></p>
+        <p><strong>建物名:</strong> <span id="contactBuilding"></span></p>
+        <p><strong>お問い合わせの種類:</strong> <span id="contactCategory"></span></p>
+        <p><strong>お問い合わせ内容:</strong> <span id="contactContent"></span></p>
       </div>
     </div>
 @endsection

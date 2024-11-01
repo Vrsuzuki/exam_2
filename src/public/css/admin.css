@@ -125,15 +125,34 @@
   margin: 20px auto;
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
 }
 
 .contact__custom-button--export {
-  
+  display: flex;
+  justify-content: center;
+  width: 100px;
+  height: 40px;
 }
 
-.contact__custom-button--pages {
-  
+.content__custom-button--pages {
+  width: 30%;
+  align-items: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.page-item {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #E0DFDE;
 }
 
 svg.w-5.h-5 {
