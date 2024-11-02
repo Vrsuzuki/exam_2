@@ -12,8 +12,7 @@ class CreateCategoriesTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('content', 255)->notNullable();
-            $table->timestamp('created_at')->useCurrent()->notNullable();
-            $table->timestamp('updated_at')->useCurrent()->notNullable();
+            $table->timestamps();
         });
     }
 

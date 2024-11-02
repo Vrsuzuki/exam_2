@@ -4,12 +4,23 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
 
 class CategoriesTableSeeder extends Seeder
 {
-    public function run()
-    {
-      Category::factory()->count(3)->create();
-    }
+  public function run()
+  {
+      $contents = [
+          "商品のお届けについて",
+          "商品の交換について",
+          "商品トラブル",
+          "ショップへのお問い合わせ",
+          "その他"
+      ];
+
+      foreach ($contents as $content) {
+          DB::table('categories')->insert([
+              'content' => $content,
+          ]);
+      }
+  }
 }
